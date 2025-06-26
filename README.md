@@ -26,13 +26,12 @@ public class daywork {
         System.out.println("5. 求模");
         System.out.print("请选择操作(1-5): ");
 
-        int choice = scanner.nextInt();// 读取用户输入的整数
+        int choice = scanner.nextInt();                         // 读取用户输入的整数
         System.out.print("输入第一个数字: ");
         double num1 = scanner.nextDouble();
         System.out.print("输入第二个数字: ");
         double num2 = scanner.nextDouble();
 
-        double result = 0;
         if (choice == 1) {
             result = num1 + num2;
             System.out.println("结果: " + result);
@@ -42,7 +41,7 @@ public class daywork {
         } else if (choice == 3) {
             result = num1 * num2;
             System.out.println("结果: " + result);
-        } else if (choice == 4) {
+        } else if (choice == 4) {                        //先判断if｛｝在else｛｝
             if (num2 != 0) {                             //除数不能为0，先判断除数是否为0.不为0则运行输出结果，else为0.则不输出
                 result = num1 / num2;
                 System.out.println("结果: " + result);
