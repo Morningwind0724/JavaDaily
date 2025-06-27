@@ -1,4 +1,5 @@
 # JavaDaily
+Day1 输出输入的内容
 import java.util.Scanner;
 
 public class Myjava {
@@ -8,8 +9,10 @@ public class Myjava {
         System.out.println(i);
     }
 }
-Day1
 
+-----------------------------------------------
+
+day 2 制作简单计算器
 import java.util.Scanner;
 
 public class daywork {
@@ -57,5 +60,66 @@ public class daywork {
         scanner.close();
     }
 }
-day 2
+
+-----------------------------------------------
+
+day3BMI计算器的交互
+import java.util.Scanner;
+
+public class daywork {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("请输入你的名字：");
+        String name = sc.nextLine();
+        System.out.print("请输入你的身高(m): ");
+        double height = sc.nextDouble();
+        System.out.print("请输入你的体重(kg): ");
+        double weight = sc.nextDouble();
+
+        // 任务1: 计算BMI值（公式：体重 / (身高*身高)）
+        double bmi = weight / (height * height);
+        System.out.println("名字：" + name);
+        System.out.printf("你的BMI值: %.2f\n", +bmi);
+
+        // 任务2: 用if-else判断健康状态
+        // BMI < 18.5: 偏瘦
+        // 18.5 ≤ BMI < 24: 正常
+        // BMI ≥ 24: 偏胖
+        if (bmi < 18.5) {
+            System.out.println("健康状态：偏瘦");
+        } else if (bmi >= 18.5 && bmi <= 24) {
+            System.out.println("健康状态：正常");
+        } else { 
+            System.out.println("健康状态：偏胖");
+        }
+
+        String healthStatus;              //判断健康状态，并配合switch case语句
+        if (bmi < 18.5) {
+            healthStatus = "偏瘦";        //String healthStatus = (bmi < 18.5) ? "偏瘦" : (bmi < 24) ? "正常" : "偏胖";
+        }
+        else if (bmi >= 18.5 && bmi <= 24) {
+            healthStatus = "正常";
+        }
+        else  {
+            healthStatus = "偏胖";
+        }
+
+        // 3. 用switch-case给出健康建议
+        switch (healthStatus) {
+            case "偏瘦":
+                System.out.println("健康建议：建议适当增加营养摄入，多吃高蛋白食物。");
+                break;
+            case "正常":
+                System.out.println("健康建议：继续保持健康的生活方式！");
+                break;
+            case "偏胖":
+                System.out.println("健康建议：建议控制饮食，增加运动量。");
+                break;
+            default:
+                System.out.println("健康建议：未知状态，请咨询医生。");
+        }
+    }
+}
+
+
 
